@@ -15,17 +15,17 @@ export default {
       notes:[
         {
           id: 1,
-          title: 'Note',
+          title: 'Note1',
           body: 'Text about nothing'
         },
         {
           id: 2,
-          title: 'Note 1',
+          title: 'Note 2',
           body: 'Text about nothing'
         },
         {
           id: 3,
-          title: 'Note 2',
+          title: 'Note 3',
           body: 'Text about nothing'
         }
       ]
