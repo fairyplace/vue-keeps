@@ -1,4 +1,14 @@
 import { createApp } from 'vue'
+import mitt from 'mitt'
+import { VueMasonryPlugin } from 'vue-masonry'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const emitter = mitt()
+let app = createApp(App)
+app.config.globalProperties.emitter = emitter
+app.use(VueMasonryPlugin)
+app.mount('#app')
+
+
+
+

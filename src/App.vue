@@ -1,40 +1,103 @@
 <template>
-<div class="wrapper">
-  <div class="form">
-    <input type="text" class="form__input">
-    <input type="text" class="form__input">
-    <button>Create post</button>
+  <div class="wrapper">
+    <KeepFormVue></KeepFormVue>
+    <NoteListVue v-bind:notes="notes"/>
   </div>
-  <div class="posts">
-    <div class="post" v-for="post in posts">
-      <div class="post__title">
-        {{post.title}}
-      </div>
-      <div class="post__body">
-        {{post.body}}
-      </div>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
-
+import KeepFormVue from "./components/KeepForm.vue";
+import NoteListVue from "./components/NoteList.vue";
 export default {
-  name: 'App',
-  data(){
-    return{
-      posts: [
-        {title: "title", body: "body"},
-        {title: "title", body: "body"},
-        {title: "title", body: "body"},
-
+  name: "App",
+  data() {
+    return {
+      notes:[
+        {
+          id: 1,
+          title: 'Note',
+          body: 'Text about nothing'
+        },
+        {
+          id: 2,
+          title: 'Note 1',
+          body: 'Text about nothing'
+        },
+        {
+          id: 3,
+          title: 'Note 2',
+          body: 'Text about nothing'
+        }
       ]
-    }
-  }
-}
+    };
+  },
+  components: {
+    KeepFormVue,
+    NoteListVue,
+  },
+};
 </script>
 
 <style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+button{
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+body {
+  min-height: 100vh;
+  background-color: #17112e;
+
+  color: #ffff;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.wrapper{
+  max-width: 1820px;
+  margin: 45px auto;
+
+}
 
 </style>
